@@ -12,7 +12,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/', indexRouter);
+app.use('/',userController.isAuthenticated, indexRouter);
 app.use('/users', usersRouter);
 app.use('/shops',userController.isAuthenticated, shopsRouter);
 

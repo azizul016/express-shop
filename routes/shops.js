@@ -8,6 +8,6 @@ router.post("/",userController.isAuthenticated, shopController.create);
 router.get("/", shopController.getAll);
 router.get("/:id", shopController.getById);
 router.put("/:id",userController.isAuthenticated, shopController.updateById);
-router.delete("/:id", shopController.deleteById);
+router.delete("/:id",userController.isAuthenticated, shopController.deleteById);
 
 module.exports = router;
