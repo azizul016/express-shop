@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-// const dbUri = process.env.MONGO_URI;
+const dbUri = process.env.MONGO_URI;
 // console.log(dbUri)
-const dbUri = 'mongodb://localhost:27017/shops'
+// const dbUri = 'mongodb://localhost:27017/shops'
 
 if(!dbUri) {
     console.error('Mongo url not set in env file');
