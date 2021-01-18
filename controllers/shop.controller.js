@@ -31,7 +31,7 @@ module.exports.getById = async (req, res, next) => {
   }
 };
 
-module.exports.updateById = async (req, res, next) => {
+module.exports.updateById = async (req, res) => {
   const id = req.params.id;
   // console.log(id);
   const updateField = req.body;
@@ -48,7 +48,7 @@ module.exports.updateById = async (req, res, next) => {
 
 // delete singleShop data
 
-module.exports.deleteById = async (req, res, next) => {
+module.exports.deleteById = async (req, res) => {
   try {
     const id = req.params.id;
     const deleteShopData = await shopService.deleteSingleShopData({ _id: id });
