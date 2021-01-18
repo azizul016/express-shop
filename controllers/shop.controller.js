@@ -1,4 +1,4 @@
-const shopService = require("../services/shop.service");
+const shopService = require('../services/shop.service');
 
 //add data
 module.exports.create = async (req, res, next) => {
@@ -6,7 +6,7 @@ module.exports.create = async (req, res, next) => {
     const shop = await shopService.create(req.body);
     return res.status(200).send(shop);
   } catch (e) {
-    return res.status(500).send({ message: "Something went wrong" });
+    return res.status(500).send({ message: 'Something went wrong' });
   }
 };
 
@@ -16,7 +16,7 @@ module.exports.getAll = async (req, res, next) => {
     const shop = await shopService.totalData();
     res.send(shop);
   } catch (e) {
-    res.status(500).send({ message: "Something went wrong" });
+    res.status(500).send({ message: 'Something went wrong' });
   }
 };
 
@@ -27,7 +27,7 @@ module.exports.getById = async (req, res, next) => {
     const singleShop = await shopService.getById(id);
     res.send(singleShop);
   } catch (e) {
-    return res.status(500).send({ message: "Something went wrong" });
+    return res.status(500).send({ message: 'Something went wrong' });
   }
 };
 
@@ -42,7 +42,7 @@ module.exports.updateById = async (req, res, next) => {
     });
     return res.status(200).send(shop);
   } catch (e) {
-    return res.status(500).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: 'Something went wrong' });
   }
 };
 
@@ -54,6 +54,6 @@ module.exports.deleteById = async (req, res, next) => {
     const deleteShopData = await shopService.deleteSingleShopData({ _id: id });
     res.send(deleteShopData);
   } catch (e) {
-    return res.status(500).send({ message: "Something went wrong" });
+    return res.status(500).send({ message: 'Something went wrong' });
   }
 };
