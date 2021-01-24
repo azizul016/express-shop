@@ -1,4 +1,4 @@
-const Shop = require("../models/Shop.model");
+const Shop = require('../models/Shop.model');
 
 //add shop data
 module.exports.create = (shop) => {

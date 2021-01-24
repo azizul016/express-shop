@@ -1,6 +1,6 @@
-const userService = require("../services/user.service");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+const userService = require('../services/user.service');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 // hashing password
 // hashPassword = (password, saltRound) => {
@@ -35,9 +35,9 @@ module.exports.register = async (req, res, next) => {
       {
         data: userObj,
       },
-      "secret",
+      'secret',
       {
-        expiresIn: "24h",
+        expiresIn: '24h',
       }
     );
 
@@ -45,14 +45,14 @@ module.exports.register = async (req, res, next) => {
       error: false,
       data: null,
       token: token,
-      message: "registration completed",
+      message: 'registration completed',
     });
   } catch (e) {
     return res.status(500).json({
       error: e,
       data: null,
       token: null,
-      message: "something went wrong",
+      message: 'something went wrong',
     });
   }
 };
@@ -89,9 +89,9 @@ module.exports.login = async (req, res, next) => {
       {
         data: userObj,
       },
-      "secret",
+      'secret',
       {
-        expiresIn: "24h",
+        expiresIn: '24h',
       }
     );
 
@@ -99,7 +99,7 @@ module.exports.login = async (req, res, next) => {
       error: false,
       data: null,
       token: token,
-      message: "login successful",
+      message: 'login successful',
     });
   } catch (e) {
     console.error(e);
@@ -107,7 +107,7 @@ module.exports.login = async (req, res, next) => {
       error: e,
       data: null,
       token: null,
-      message: "something went wrong",
+      message: 'something went wrong',
     });
   }
 };

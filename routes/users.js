@@ -10,10 +10,9 @@ const router = express.Router();
 //   res.send('Id route')
 // })
 
-const userController = require('../controllers/user.controller')
+const userController = require('../controllers/user.controller');
 
 router.post('/register', userController.register);
 router.post('/login', userController.login);
-
 
 module.exports = router;
